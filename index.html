@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi ! I'm Manish</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Manish Gupta</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#home">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#skills">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#experince">Experience</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#projects">Projects</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#contact">Contact</a></div>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="main-container">
+            <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                <img src="main.png" alt="">
+                <script>
+                    gsap.to(".image img", {
+                        y: -10,
+                        duration: 2,
+                        repeat: -1,
+                        yoyo: true,
+                        ease: "power1.inOut"
+                    });
+                </script>
+                
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Manish</span></h1>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
+                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">A highly motivated BSc Computer Science student in my final semester, seeking a Software Engineering Internship to leverage my web development, app development, and SEO skills. Passionate about building efficient and scalable solutions while gaining real-world experience.</p>
+                <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                    <a href="https://github.com/CodeGoManish" ><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100028451280455"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/manish-gupta-a0a671208/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+                <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                    <a href="F:\Neon projects\Resume.pdf" download>
+                    <button>Download Resume</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <header id="home">
+        <li><a href="home.html">About More </a></li>
+         <div class="gif-container">
+            <img src="F:\Neon projects\3D@2.gif" alt="Descriptive Text for the GIF" frameborder="0" width="100%" height="600px" />
+            
+         
+           
+
+          </div>
+      
+          <!-- Show PDF Link -->
+          
+          
+         <canvas id="3d-background"></canvas>
+        
+    </header>
+    
+    <section id="about">
+        <div class="about-container">
+            <h2 class="neon-text">About Me</h2>
+            
+            <!-- Personal Information -->
+            <div class="about-intro">
+                <p>Hello! I'm <strong>𝗠𝗮𝗻𝗶𝘀𝗵 𝗚𝘂𝗽𝘁𝗮</strong>, a passionate <strong>Computer Science Student</strong> at Delhi University, exploring the world of <strong>Technology</strong>, <strong>Content Creation</strong>, and <strong>Innovation</strong>.</p>
+                <p>As a <strong>Developer</strong> and <strong>Freelancer</strong>, I have hands-on experience in:
+                    <ul>
+                        <li>App Development (Android, Flutter)</li>
+                        <li>Python, Java, C++, Data Science (IIT Madras & Delhi University)</li>
+                        <li>Digital Marketing (Google Garage Certified)</li>
+                        <li>Video Editing & Animation</li>
+                        <li>Photography & Graphic Design (Canva)</li>
+                    </ul>
+                </p>
+            </div>
+    
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <p>Connect with me on:</p>
+                <ul>
+                    <li><a href="https://github.com/CodeGoManish" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/manish-gupta-123456/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="mailto:manish05453@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+                </ul>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About More </a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Scrollable Skills Section -->
+            
+    
+            <!-- Call to Action -->
+        
+    </section>
+    
+    <!-- Style for interactivity and scrollable sections -->
+    <style>
+        #about {
+            padding: 50px;
+            background-color: #f9f9f9;
+        }
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .neon-text {
+            text-align: center;
+            font-size: 3rem;
+            color: #33dbe0;
+            text-shadow: 0 0 10px #14f126, 0 0 20px #90b0df;
+        }
+        .about-intro {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .social-links ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+        .social-links li {
+            margin: 10px;
+        }
+        .social-links a {
+            color: #f51c1c;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            color: #00FF00;
+        }
+    
+
+
+        
+            .skills-list, .achievements-list {
+    max-height: 250px;
+    
+}
+
+           
+        
+    
+        
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+        .progress {
+            height: 10px;
+            background-color: #00FF00;
+            border-radius: 5px;
+        }
+    
+        .achievements-list ul {
+            padding: 0;
+            overflow-y: scroll;
+        }
+        .cta {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .cta-btn {
+            background-color: #00FF00;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+        .cta-btn:hover {
+            background-color: #aab7bb;
+        }
+    </style>
+    
+    
+    <!-- Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    
+    <!-- Style for interactivity -->
+    <style>
+        #about {
+            padding: 50px;
+            background-color: #f9f9f9;
+        }
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .about-intro {
+            margin-bottom: 30px;
+        }
+    </style>
+    <section id="skills">
+        <h2 class="neon-text"> <a href="AI.html">KI</a></h2>
+       
+        <img src="voice.gif" alt="Skills" style="width: 100%; margin-top: 20px;">
+        
+        
+       
+    </section>
+
+    <h2 id="experince">
+        <h2 class="neon-text">Experience <li><a href="experince.html"> Projects and Experience </a></li></h2>
+        
+        <h3 class ="neon-text"> <li><a href="about.html">About More </a></li></h3></h2>
+        
+        <p>KI</p>
+        <div class="back-button">
+      
+            <button onclick="window.history.back();">Back</button>
+          </div>
+        
+    </section>
+
+    <section id="projects">
+        
+        <ul class="social-links">
+            <li><a href="https://github.com/CodeGoManish" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+            <li> CHECK NOW </li>
+        </ul>
+        <li><a href="https://github.com/CodeGoManish" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/manish-gupta-123456/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        <li><a href="mailto:manish05453@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
+        <div class="project" data-aos="zoom-in" data-aos-duration="1000">
+          
+            <h3>Portfolio Website</h3>
+            <p>A neon-themed personal portfolio.</p>
+        </div>
+        <div class="project" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+            
+           
+            <h3>Landing Page</h3>
+            <p>Modern, responsive landing page.</p>
+        </div>
+        <div class="back-button">
+            <button onclick="window.history.back();">Back</button>
+          </div>
+        
+    </section>
+
+    <section id="contact" style="background-image: url('path_to_your_image.jpg'); background-size: cover; padding: 50px 0;">
+        <h2 class="neon-text" style="text-align: center;">Contact Me</h2>
+        <form id="contactForm" style="max-width: 600px; margin: 0 auto; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
+            
+            <!-- Name Field -->
+            <div class="form-item">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <!-- Submit Button -->
+            <div class="form-item">
+                <button type="submit" class="neon-button" style="width: 100%; padding: 10px; background-color: #00f; color: white; border: none; cursor: pointer;"><li><a href="contact.html">Submit</a></li></button>
+            </div>
+            <div class="back-button">
+                <button onclick="window.history.back();">Back</button>
+              </div>
+            
+            <nav>
+                
+                <li><a href="index.html">Home</a></li>
+                    
+                
+            </nav>
+        </form>
+        <p id="formMessage" style="text-align: center; font-size: 14px;"></p>
+    </section>
+    
+    <style>
+        .form-item {
+            margin-bottom: 20px;
+        }
+        .form-item input,
+        .form-item select,
+        .form-item textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .neon-button {
+            font-size: 16px;
+            padding: 15px;
+            background: #08f;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .neon-button:hover {
+            background: #06c;
+        }
+        .gender-options input {
+            margin-right: 10px;
+        }
+    </style>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({offset:0});
+    </script>
+</body>
+</html>
