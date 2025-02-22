@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive PyScript</title>
+    
+    <!-- Load PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+
+    <h1>Run Python in Browser</h1>
+
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name">
+    <button py-click="greet()">Submit</button>
+
+    <p id="greeting"></p>
+
+    <py-script>
+        def greet():
+            name = Element("name").value
+            Element("greeting").write(f"Hello, {name}!")
+    </py-script>
+
+</body>
+</html>
