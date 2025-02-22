@@ -1,0 +1,66 @@
+[
+    {
+        "role": "user",
+        "content": "HELLO"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello Manish! It's nice to meet you. How can I assist you today?"
+    },
+    {
+        "role": "user",
+        "content": "WHO ARE YOU"
+    },
+    {
+        "role": "assistant",
+        "content": "I am KI, an advanced AI chatbot designed to provide accurate and up-to-date information from the internet."
+    },
+    {
+        "role": "user",
+        "content": "HELLO"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello again, Manish! Is there something I can help you with?"
+    },
+    {
+        "role": "user",
+        "content": "WHO ARE YOU"
+    },
+    {
+        "role": "assistant",
+        "content": "I am KI, an advanced AI chatbot."
+    },
+    {
+        "role": "user",
+        "content": "TIME"
+    },
+    {
+        "role": "assistant",
+        "content": "11:23:54"
+    },
+    {
+        "role": "user",
+        "content": "I AM 20 YEARS OLD "
+    },
+    {
+        "role": "assistant",
+        "content": "You were born in 2005."
+    },
+    {
+        "role": "user",
+        "content": "WHO IS MANISH "
+    },
+    {
+        "role": "assistant",
+        "content": "Based on my search results, there are multiple individuals with the name Manish. Here are a few notable ones:\n\n1. Manish Malhotra: An Indian fashion designer.\n2. Manish (given name): A common Hindu masculine given name that means \"The God of the Mind\" or the one who has control over their mind.\n3. Maniesh Paul: An Indian actor, TV host, anchor, model, and singer.\n\nWhich one would you like to know more about, or is there another context you'd like to explore?"
+    },
+    {
+        "role": "user",
+        "content": "WHO IS MANISH GUPTA"
+    },
+    {
+        "role": "assistant",
+        "content": "Based on my search results, there are multiple individuals with the name Manish Gupta. Here are a few notable ones:\n\n1. Manish Gupta (Film director and writer): An Indian film director and writer in the Indian film industry.\n2. Manish Gupta (politician): An Indian politician who was the Minister for Power in the Government of West Bengal and a Member of the West Bengal Legislative Assembly.\n3. Manish Gupta (Google Research): Dr. Manish Gupta, the Director of Google Research India, who also holds an additional appointment as Infosys Foundation Chair Professor at IIIT Bangalore.\n\nIf you're looking for more information about a specific Manish Gupta, please let me know!"
+    }
+]

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Attendance Management System</h1>
+        <input type="text" id="studentName" placeholder="Enter Student Name">
+        <button onclick="markAttendance()">Mark Attendance</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceList">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function markAttendance() {
+            const name = document.getElementById("studentName").value;
+            if (name === "") {
+                alert("Please enter a name!");
+                return;
+            }
+
+            const table = document.getElementById("attendanceList");
+            const row = document.createElement("tr");
+
+            const nameCell = document.createElement("td");
+            nameCell.textContent = name;
+
+            const dateCell = document.createElement("td");
+            const date = new Date();
+            dateCell.textContent = date.toDateString();
+
+            const timeCell = document.createElement("td");
+            timeCell.textContent = date.toLocaleTimeString();
+
+            row.appendChild(nameCell);
+            row.appendChild(dateCell);
+            row.appendChild(timeCell);
+            table.appendChild(row);
+
+            document.getElementById("studentName").value = "";
+        }
+    </script>
+</body>
+</html>

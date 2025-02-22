@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manish Gupta | Portfolio</title>
+  <style>
+    /* Reset default margins */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Style for the header */
+    header {
+      height: 100vh; /* Full viewport height */
+      display: flex;
+      flex-direction: column; /* Align elements in a column */
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally */
+      text-align: center; /* Center text */
+      background: #111; /* Dark background */
+      color: white;
+      position: relative;
+    }
+
+    /* Neon text effect */
+    .neon-text {
+      font-size: 3rem;
+      text-shadow: 0 0 5px #08f, 0 0 10px #08f, 0 0 20px #08f;
+    }
+
+    /* Neon button */
+    .neon-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #08f;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 18px;
+      transition: background 0.3s;
+    }
+
+    .neon-button:hover {
+      background: #06c;
+    }
+
+    /* Style for the GIF */
+    .gif-container img {
+      width: 300px; /* Adjust width */
+      margin-top: 20px; /* Space between text and GIF */
+      animation: pulse cubic-bezier0.5s infinite;
+    }
+
+    /* Simple animation */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<header id="home">
+    <h1 class="neon-text">Manish Gupta</h1>
+    <p>Web Developer | Designer | Video Editor</p>
+
+    <!-- Centered GIF -->
+    <div class="gif-container">
+      <img src="3D@2.gif" alt="Descriptive Text for the GIF">
+    </div>
+    <div class="back-button">
+        <button onclick="window.history.back();">Back</button>
+      </div>
+
+    <!-- Show PDF Link -->
+    <a href="homepdf.html" class="neon-button">SHOW</a>
+    
+    <!-- Background Canvas -->
+    <canvas id="3d-background"></canvas>
+</header>
+
+</body>
+</html>

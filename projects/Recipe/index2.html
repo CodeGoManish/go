@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Text-to-Speech</title>
+    <link rel="stylesheet" href="text.css">
+    <script src="final.js" type="module"></script>
+   
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0d0d0d;
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+        }
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            text-align: center;
+        }
+        h1 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px cyan;
+        }
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px cyan;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            background: #222;
+            color: #0ff;
+            box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        button {
+            background: linear-gradient(45deg, #0ff, #00f);
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 0 10px cyan;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        button:hover {
+            box-shadow: 0 0 20px cyan;
+            transform: scale(1.05);
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            background: #222;
+            color: #0ff;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        <div class="container">
+            <h1>🔊 Neon Text-to-Speech</h1>
+            <label for="text">Enter Text:</label>
+            <textarea id="text" placeholder="Type something to speak..."></textarea>
+
+            <div class="controls">
+                <label for="voice">Select Voice:</label>
+                <select id="voice"></select>
+                <button id="speak">🔊 Speak</button>
+                <button id="stop">⏹ Stop</button>
+                <a href="index.html" class="neon-button">Home</a>
+
+                <style>
+                    .neon-button {
+                        display: inline-block;
+                        padding: 12px 25px;
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: #fff;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        background: linear-gradient(45deg, #0ff, #00f);
+                        border-radius: 10px;
+                        box-shadow: 0 0 10px cyan, 0 0 20px blue;
+                        transition: 0.3s ease-in-out;
+                    }
+                
+                    .neon-button:hover {
+                        box-shadow: 0 0 20px cyan, 0 0 40px blue;
+                        transform: scale(1.1);
+                    }
+                </style>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const textArea = document.getElementById('text');
+        const speakButton = document.getElementById('speak');
+        const stopButton = document.getElementById('stop');
+        const voiceSelect = document.getElementById('voice');
+        let speech = new SpeechSynthesisUtterance();
+
+        function loadVoices() {
+            let voices = speechSynthesis.getVoices();
+            voiceSelect.innerHTML = '';
+            voices.forEach((voice, index) => {
+                let option = document.createElement('option');
+                option.value = index;
+                option.textContent = voice.name;
+                voiceSelect.appendChild(option);
+            });
+        }
+
+        speechSynthesis.onvoiceschanged = loadVoices;
+
+        speakButton.addEventListener('click', () => {
+            let voices = speechSynthesis.getVoices();
+            speech.text = textArea.value;
+            speech.voice = voices[voiceSelect.value] || voices[0];
+            speech.rate = 1;
+            speech.pitch = 1;
+            speechSynthesis.speak(speech);
+        });
+
+        stopButton.addEventListener('click', () => {
+            speechSynthesis.cancel();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+        }
+        .recipe-card {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .recipe-card h3 {
+            margin: 5px 0;
+        }
+        .recipe-card button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            margin-top: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .recipe-card button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recipe App</h1>
+        <input type="text" id="recipeName" placeholder="Enter Recipe Name">
+        <input type="text" id="recipeIngredients" placeholder="Enter Ingredients (comma separated)">
+        <textarea id="recipeInstructions" placeholder="Enter Cooking Instructions" rows="4"></textarea>
+        <button onclick="addRecipe()">Add Recipe</button>
+
+        <h2>Saved Recipes</h2>
+        <div id="recipeList"></div>
+    </div>
+
+    <script>
+        function addRecipe() {
+            const name = document.getElementById("recipeName").value;
+            const ingredients = document.getElementById("recipeIngredients").value;
+            const instructions = document.getElementById("recipeInstructions").value;
+
+            if (name === "" || ingredients === "" || instructions === "") {
+                alert("Please fill all fields!");
+                return;
+            }
+
+            const recipeList = document.getElementById("recipeList");
+            const recipeCard = document.createElement("div");
+            recipeCard.classList.add("recipe-card");
+
+            recipeCard.innerHTML = `
+                <h3>${name}</h3>
+                <p><strong>Ingredients:</strong> ${ingredients}</p>
+                <p><strong>Instructions:</strong> ${instructions}</p>
+                <button onclick="removeRecipe(this)">Delete</button>
+            `;
+
+            recipeList.appendChild(recipeCard);
+
+            document.getElementById("recipeName").value = "";
+            document.getElementById("recipeIngredients").value = "";
+            document.getElementById("recipeInstructions").value = "";
+        }
+
+        function removeRecipe(button) {
+            button.parentElement.remove();
+        }
+    </script>
+</body>
+</html>

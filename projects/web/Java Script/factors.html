@@ -1,0 +1,33 @@
+<!DOCTYPE
+ <html>
+<head>
+    
+    <title>Print Factors</title>
+</head>
+<body>
+     <h1> Math </h1>
+     <img src="math.jpg" alt="math" width="300" height="100">
+    <h3>Enter a number to find its factors:</h3>
+    <input type="number" id="numberInput" placeholder="Enter number">
+    <button onclick="printFactors()">Find Factors</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function printFactors() {
+            const number = parseInt(document.getElementById('numberInput').value);
+            let factors = [];
+            
+            for (let i = 1; i <= number; i++) {
+                if (number % i === 0) {
+                    factors.push(i);
+                }
+            }
+            
+            document.getElementById('result').innerText = `Factors of ${number}: ${factors.join(', ')}`;
+        }
+    </script>
+
+</body>
+
+</html>
