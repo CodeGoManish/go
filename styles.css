@@ -9,32 +9,29 @@
 
 html{
     overflow-x: hidden;
-    
 }
 
 body{
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    
+    background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
+}
+
+/* FIX 1: Moved this rule outside of the 'body' rule 
+I also removed the duplicate properties.
+*/
 .skills-section, .achievements {
     overflow-y: auto;
     padding-right: 10px;
     max-height: 250px;
-    overflow-y: auto;
-    padding-right: 10px;
 }
-    
-    background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
-}
-
 
 nav{
     width: 100%;
     height: 10vh;
     position: sticky;
 }
-
 
 .nav-container{
     width: 100%;
@@ -104,7 +101,7 @@ nav{
 }
 
 .nav-container .contact-btn a{
-    color: white;
+    color: white; /* Note: This is white on a light gradient, might be hard to see */
     transition: 0.3s linear;
 }
 
@@ -204,7 +201,8 @@ section{
     width: calc(100% + 8px);
     height: 100%;
     border-left: 3px solid black;
-    animation:  cursor 0.6s linear infinite;
+    /* FIX 3: Removed invalid character/space before 'cursor' */
+    animation: cursor 0.6s linear infinite;
 }
 
 @keyframes cursor {
@@ -267,29 +265,33 @@ section{
 }
 
 .content button:hover{
- scale: 1.1;
- color: rgb(109,67, 0);
- border: 2px solid rgb(109,67, 0);
- background-color: transparent;
- font-weight: 700;
- box-shadow: 0 0 40px rgb(109,67, 0);
+    scale: 1.1;
+    color: rgb(109,67, 0);
+    border: 2px solid rgb(109,67, 0);
+    background-color: transparent;
+    font-weight: 700;
+    box-shadow: 0 0 40px rgb(109,67, 0);
+}
+
+/* FIX 2: Moved this media query outside of the 720px one.
+It should come first since it's a larger breakpoint.
+*/
+@media (max-width: 768px) {
+    .skills-list, .achievements-list {
+        max-height: 200px;
+    }
 }
 
 @media (max-width:720px) {
     body{
         overflow-y: visible;
         overflow-y: auto;
-    scroll-behavior: smooth;
+        scroll-behavior: smooth;
     }
     
-    @media (max-width: 768px) {
-        .skills-list, .achievements-list {
-            max-height: 200px;
-        }
-    }
     .nav-container .links{
         display: none;
-    }    
+    }   
 
     nav .logo{
         position: absolute;
@@ -303,9 +305,7 @@ section{
         flex-direction: column;
     }
 
-    .nav-container .links{
-        display: none;
-    }
+    /* FIX 4: Removed the duplicate .nav-container .links rule */
 
     .hamburg,.cancel{
         display: block;
@@ -329,5 +329,3 @@ section{
         margin-bottom: 0px;
     }
 }
-
-
