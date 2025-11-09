@@ -23,42 +23,86 @@
       background: #111; /* Dark background */
       color: white;
       position: relative;
+      /* Add some padding for small screens */
+      box-sizing: border-box;
+      padding: 20px;
     }
 
     /* Neon text effect */
     .neon-text {
       font-size: 3rem;
       text-shadow: 0 0 5px #08f, 0 0 10px #08f, 0 0 20px #08f;
+      margin-top: 0;
+      margin-bottom: 10px;
     }
-
-    /* Neon button */
-    .neon-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #08f;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 18px;
-      transition: background 0.3s;
-    }
-
-    .neon-button:hover {
-      background: #06c;
+    
+    header p {
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 30px; /* Added space below subtitle */
     }
 
     /* Style for the GIF */
     .gif-container img {
-      width: 300px; /* Adjust width */
+      /* Make it responsive */
+      max-width: 300px; /* It won't get bigger than 300px */
+      width: 100%;    /* It will shrink to fit its container */
+      height: auto;   /* Maintain aspect ratio */
       margin-top: 20px; /* Space between text and GIF */
-      animation: pulse cubic-bezier0.5s infinite;
+      
+      /* Fixed pulse animation */
+      animation: pulse 1.5s infinite; 
+    }
+
+    /* Container for the buttons */
+    .btn-container {
+        display: flex;
+        flex-direction: row; /* Align buttons side-by-side */
+        gap: 20px; /* Add space between the buttons */
+        margin-top: 40px;
+    }
+
+    /* Neon button (shared style) */
+    .neon-button {
+      display: inline-block;
+      padding: 12px 25px;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: all 0.3s;
+      border: 2px solid #08f; /* Base border */
+    }
+
+    /* Primary button style (SHOW) */
+    .neon-button.primary {
+      background: #08f;
+      box-shadow: 0 0 5px #08f, 0 0 10px #08f;
+    }
+
+    .neon-button.primary:hover {
+      background: #06c;
+      border-color: #06c;
+      box-shadow: 0 0 10px #08f, 0 0 20px #08f;
+    }
+
+    /* Ghost button style (Back) */
+    .neon-button.ghost {
+      background: transparent;
+      color: #08f;
+    }
+    
+    .neon-button.ghost:hover {
+      background: #08f; /* Fill on hover */
+      color: white;
+      box-shadow: 0 0 5px #08f, 0 0 10px #08f;
     }
 
     /* Simple animation */
     @keyframes pulse {
       0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+      50% { transform: scale(1.05); } /* Made pulse more subtle */
       100% { transform: scale(1); }
     }
   </style>
@@ -66,21 +110,20 @@
 <body>
 
 <header id="home">
+    
     <h1 class="neon-text">Manish Gupta</h1>
     <p>Web Developer | Designer | Video Editor</p>
 
-    <!-- Centered GIF -->
     <div class="gif-container">
       <img src="3D@2.gif" alt="Descriptive Text for the GIF">
     </div>
-    <div class="back-button">
-        <button onclick="window.history.back();">Back</button>
-      </div>
 
-    <!-- Show PDF Link -->
-    <a href="homepdf.html" class="neon-button">SHOW</a>
+    <div class="btn-container">
+        <button onclick="window.history.back();" class="neon-button ghost">Back</button>
+        
+        <a href="homepdf.html" class="neon-button primary">SHOW</a>
+    </div>
     
-    <!-- Background Canvas -->
     <canvas id="3d-background"></canvas>
 </header>
 
