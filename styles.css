@@ -416,4 +416,99 @@ It should come first since it's a larger breakpoint.
 .buy-btn:hover, .cart-btn:hover {
   opacity: 0.9;
 }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.product-card {
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(0, 224, 255, 0.4);
+}
+
+/* 👇 Fixed Image Frame */
+.product-img {
+  width: 100%;
+  height: 220px;              /* Fixed height for uniformity */
+  object-fit: cover;          /* Crops the image evenly */
+  border-bottom: 2px solid #00e0ff;
+  display: block;
+  background: #0b0b0b;        /* fallback background */
+}
+
+/* Product Details */
+.product-details {
+  padding: 18px;
+  color: #fff;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+}
+
+.product-details h3 {
+  color: #00e0ff;
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+.product-details p {
+  font-size: 0.95em;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+/* Action Buttons */
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.buy-btn {
+  background: linear-gradient(45deg, #00e0ff, #0077ff);
+  color: #fff;
+}
+
+.cart-btn {
+  background: transparent;
+  color: #00e0ff;
+  border: 1px solid #00e0ff;
+}
+
+.buy-btn:hover, .cart-btn:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* Make sure cards are even in height */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
 
