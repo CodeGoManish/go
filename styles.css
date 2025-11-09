@@ -330,68 +330,90 @@ It should come first since it's a larger breakpoint.
     }
 }
 /* --- Project Showcase Styles --- */
-
-#projects {
-    padding: 50px 10%; /* Add padding to the sides */
-    background-color: #222; /* A dark background for the projects section */
+.product-section {
+  padding: 60px 20px;
+  background: #0d0d0d;
+  text-align: center;
 }
 
-.project-grid {
-    display: grid;
-    /* This creates a responsive grid. It will fit as many
-       300px columns as it can, and they will grow to fill space. */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem; /* Space between the cards */
+.neon-text {
+  color: #00e0ff;
+  font-size: 2.5em;
+  text-shadow: 0 0 10px #00e0ff, 0 0 20px #00e0ff;
+  margin-bottom: 30px;
 }
 
-.project-card {
-    background: #333; /* Dark card background */
-    border-radius: 10px;
-    overflow: hidden; /* Keeps the image corners rounded */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
 }
 
-.project-card:hover {
-    transform: translateY(-10px); /* Lifts the card on hover */
-    /* Add a neon-like glow on hover */
-    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3); 
+.product-card {
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-image img {
-    width: 100%;
-    height: 200px; /* Gives all images a uniform height */
-    object-fit: cover; /* This is key! It scales the image to fit, like a poster */
-    display: block;
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.4);
 }
 
-.project-content {
-    padding: 1.5rem;
-    color: #eee; /* Light text color for on the dark card */
+.product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
-.project-content h3 {
-    font-size: 1.5rem;
-    color: #fff; /* White title */
-    margin-bottom: 0.5rem;
+.product-details {
+  padding: 20px;
+  color: #fff;
 }
 
-.project-content p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
+.product-details h3 {
+  color: #00e0ff;
+  font-size: 1.2em;
+  margin-bottom: 8px;
 }
 
-.project-link {
-    display: inline-block;
-    text-decoration: none;
-    color: #0ff; /* Neon cyan color for the link */
-    font-weight: bold;
-    transition: color 0.3s ease;
+.product-details p {
+  font-size: 0.95em;
+  color: #ccc;
+  margin-bottom: 15px;
 }
 
-.project-link:hover {
-    color: #fff;
-    text-decoration: underline;
+.product-actions {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.buy-btn {
+  background: linear-gradient(45deg, #00e0ff, #0077ff);
+  color: #fff;
+}
+
+.cart-btn {
+  background: #222;
+  color: #00e0ff;
+  border: 1px solid #00e0ff;
+}
+
+.buy-btn:hover, .cart-btn:hover {
+  opacity: 0.9;
 }
 
